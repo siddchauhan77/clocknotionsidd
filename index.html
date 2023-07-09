@@ -20,7 +20,9 @@
             justify-content: center;
             align-items: center;
             color: white;
-            font-size: 24px;
+            font-size: 16px;
+            padding: 10px;
+            text-align: center;
         }
     </style>
 </head>
@@ -33,14 +35,24 @@
         var date = new Date();
         var hours = date.getHours();
         var minutes = date.getMinutes();
-        var seconds = date.getSeconds();
 
         // Pad numbers with a leading zero if needed
         hours = hours < 10 ? '0' + hours : hours;
         minutes = minutes < 10 ? '0' + minutes : minutes;
-        seconds = seconds < 10 ? '0' + seconds : seconds;
 
-        var time = hours + ":" + minutes + ":" + seconds;
+        // Array to convert month index to month name
+        var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        // Array to convert day index to day name
+        var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        var dayOfWeek = dayNames[date.getDay()];
+        var dayOfMonth = date.getDate();
+        var month = monthNames[date.getMonth()];
+        var year = date.getFullYear();
+
+        var time = dayOfWeek + ", " + dayOfMonth + "th of " + month + " " + year;
+
         document.getElementById("clock").innerText = time;
 
         setTimeout(showTime, 1000);
