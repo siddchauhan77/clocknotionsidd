@@ -3,17 +3,30 @@
 <head>
     <style>
         body {
-            text-align: center;
-            padding: 10px;
-            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #FFF;
+            font-family: Arial, sans-serif;
+        }
+
+        #clock {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
         }
     </style>
 </head>
 <body>
 
-<h1>Live Clock Widget</h1>
-
-<p id="clock"></p>
+<div id="clock"></div>
 
 <script>
     function showTime() {
